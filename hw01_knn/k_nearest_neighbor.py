@@ -10,7 +10,7 @@ class KNearestNeighbor:
         pass
 
     def fit(self, X, y):
-        pass
+        
         """
         Train the classifier. For k-nearest neighbors this is just
         memorizing the training data.
@@ -25,7 +25,7 @@ class KNearestNeighbor:
         self.y_train = y
 
     def predict(self, X, k=1, num_loops=0):
-        pass
+        
         """
         Predict labels for test data using this classifier.
 
@@ -79,16 +79,16 @@ class KNearestNeighbor:
                 #####################################################################
                 # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-                    dif = X[i] - self.X_train[j]
-                    square = dif ** 2
-                    sum_square  = np.sum(square)
-                    dists[i,j] = np.sqrt(sum_square)
+                dif = X[i] - self.X_train[j]
+                square = dif ** 2
+                sum_square  = np.sum(square)
+                dists[i,j] = np.sqrt(sum_square)
 
                 # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
 
     def compute_distances_one_loop(self, X):
-        pass
+        
         """
         Compute the distance between each test point in X and each training point
         in self.X_train using a single loop over the test data.
@@ -117,7 +117,7 @@ class KNearestNeighbor:
         return dists
 
     def compute_distances_no_loops(self, X):
-        pass
+        
         """
         Compute the distance between each test point in X and each training point
         in self.X_train using no explicit loops.
