@@ -147,7 +147,8 @@ class KNearestNeighbor:
         sum_square_test = np.sum(square_test, axis=1)
         sum_square_train = np.sum(square_train, axis=1)
         cross = X@self.X_train.T
-        dists = np.sqrt(sum_square_test[:, None] + sum_square_train - 2*cross)
+        #dists = np.sqrt(sum_square_test[:, None] + sum_square_train - 2*cross)
+        dists = np.sqrt(np.maximum(sum_square_test[:, None] + sum_square_train - 2*cross, 0))
 
 
 
